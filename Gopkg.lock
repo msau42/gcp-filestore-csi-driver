@@ -14,10 +14,10 @@
   version = "v0.3.0"
 
 [[projects]]
-  name = "github.com/davecgh/go-spew"
-  packages = ["spew"]
-  revision = "346938d642f2ec3594ed81d874461961cd0faa76"
-  version = "v1.1.0"
+  name = "github.com/ghodss/yaml"
+  packages = ["."]
+  revision = "0ca9ea5df5451ffdf184b4428c902747c2c11cd7"
+  version = "v1.0.0"
 
 [[projects]]
   branch = "master"
@@ -37,6 +37,18 @@
   ]
   revision = "b4deda0973fb4c70b50d226b1af49f3da59f5265"
   version = "v1.1.0"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/errwrap"
+  packages = ["."]
+  revision = "7554cd9344cec97297fa6649b055a8c98c2a1e55"
+
+[[projects]]
+  branch = "master"
+  name = "github.com/hashicorp/go-multierror"
+  packages = ["."]
+  revision = "b7773ae218740a7be65057fc60b366a49b538a44"
 
 [[projects]]
   branch = "master"
@@ -92,16 +104,22 @@
   version = "v1.4.0"
 
 [[projects]]
-  name = "github.com/pmezard/go-difflib"
-  packages = ["difflib"]
-  revision = "792786c7400a136282c1664665ae0a8db921c6c2"
-  version = "v1.0.0"
+  name = "github.com/pborman/uuid"
+  packages = ["."]
+  revision = "e790cca94e6cc75c7064b1332e63811d4aae1a53"
+  version = "v1.1"
 
 [[projects]]
-  name = "github.com/stretchr/testify"
-  packages = ["assert"]
-  revision = "f35b8ab0b5a2cef36673838d662e249dd9c94686"
-  version = "v1.2.2"
+  name = "github.com/sirupsen/logrus"
+  packages = ["."]
+  revision = "c155da19408a8799da419ed3eeb0cb5db0ad5dbc"
+  version = "v1.0.5"
+
+[[projects]]
+  branch = "master"
+  name = "golang.org/x/crypto"
+  packages = ["ssh/terminal"]
+  revision = "a49355c7e3f8fe157a85be2f77e6e269a0f89602"
 
 [[projects]]
   branch = "master"
@@ -136,7 +154,10 @@
 [[projects]]
   branch = "master"
   name = "golang.org/x/sys"
-  packages = ["unix"]
+  packages = [
+    "unix",
+    "windows"
+  ]
   revision = "a9e25c09b96b8870693763211309e213c6ef299d"
 
 [[projects]]
@@ -176,6 +197,8 @@
   branch = "master"
   name = "google.golang.org/api"
   packages = [
+    "cloudresourcemanager/v1",
+    "compute/v0.beta",
     "compute/v1",
     "gensupport",
     "googleapi",
@@ -247,8 +270,11 @@
   branch = "master"
   name = "k8s.io/apimachinery"
   packages = [
+    "pkg/types",
+    "pkg/util/errors",
     "pkg/util/runtime",
     "pkg/util/sets",
+    "pkg/util/uuid",
     "pkg/util/wait"
   ]
   revision = "521145febf93d5639dce48a49ee8dc080863b034"
@@ -265,13 +291,32 @@
 
 [[projects]]
   branch = "master"
+  name = "k8s.io/test-infra"
+  packages = [
+    "boskos/client",
+    "boskos/common",
+    "boskos/storage"
+  ]
+  revision = "da7db2e9d9c3c68def2f3e817384a2af9de3b054"
+
+[[projects]]
+  branch = "master"
   name = "k8s.io/utils"
   packages = ["exec"]
   revision = "258e2a2fa64568210fbd6267cf1d8fd87c3cb86e"
 
+[[projects]]
+  branch = "master"
+  name = "sigs.k8s.io/gcp-compute-persistent-disk-csi-driver"
+  packages = [
+    "pkg/gce-cloud-provider",
+    "pkg/utils"
+  ]
+  revision = "fc8a07eac154c5f7945dc1d59b70ca88c1b20765"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "de2a904bf664014966fe92aff75b92283c44212321edc459ce147df7c9bbe336"
+  inputs-digest = "0e8013f1290c01cec36a8e8abe80b28c2110217e8b9621e50ee1c906cbbe7f72"
   solver-name = "gps-cdcl"
   solver-version = 1
