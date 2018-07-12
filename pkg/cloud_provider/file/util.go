@@ -36,7 +36,7 @@ func newOauthClient() (*http.Client, error) {
 			return nil, fmt.Errorf("error accessing GCP service account token %q: %v", gac, err)
 		}
 	} else {
-		return nil, fmt.Errorf("GOOGLE_APPLICATION_CREDENTIALS env var not set")
+		glog.V(5).Infof("GOOGLE_APPLICATION_CREDENTIALS env var not set %v", gac)
 	}
 
 	tokenSource, err := google.DefaultTokenSource(oauth2.NoContext, compute.CloudPlatformScope)
